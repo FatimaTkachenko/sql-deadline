@@ -27,6 +27,8 @@ public class BlockingTest {
         open("http://localhost:9999");
     }
 
+    // Известный баг SUT: https://github.com/FatimaTkachenko/sql-deadline/issues/1
+    // Тест намеренно падает, пока баг не исправлен.
     @Test
     @DisplayName("Блокировка пользователя после 3 неудачных попыток ввода пароля")
     void shouldBlockUserAfterThreeFailedAttempts() {
