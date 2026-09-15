@@ -1,11 +1,13 @@
 package ru.netology.test;
 
 import com.codeborne.selenide.Configuration;
+import org.junit.jupiter.api.Assumptions;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import ru.netology.data.DataHelper;
+import ru.netology.data.EnvironmentCheck;
 import ru.netology.data.SQLHelper;
 import ru.netology.page.DashboardPage;
 import ru.netology.page.LoginPage;
@@ -17,6 +19,8 @@ public class LoginTest {
 
     @BeforeAll
     static void setUp() {
+        Assumptions.assumeTrue(EnvironmentCheck.isReady(), EnvironmentCheck.hint());
+
         Configuration.headless = false;
         Configuration.browserSize = "1600x900";
     }
