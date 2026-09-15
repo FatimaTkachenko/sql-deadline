@@ -1,15 +1,11 @@
 # Домашнее задание к занятию «3.2. SQL»
 
-Проект автотестов для SUT **«Интернет Банк»** (`app-deadline.jar`), написанный на Selenide + JUnit 5 + Apache DBUtils.
 
-## Стек
-
-- **Java 11**
-- **Gradle 8.8**
-- **Selenide 6.19.1** (Page Objects)
-- **JUnit 5** (5.10.2)
-- **Apache Commons DBUtils** (1.7) — для работы с БД
-- **MySQL 8.0.34** (Docker)
-- **Lombok**
-
-## Структура проекта
+> ⚠️ **ВАЖНО:** автотесты требуют запущенного окружения.
+> Перед `gradlew test` поднимите:
+> 1. **Docker Desktop** (Engine running).
+> 2. MySQL-контейнер: `docker compose up -d`
+> 3. SUT в отдельном окне: `java -jar artifacts/app/app-deadline.jar`
+>
+> Без окружения автотесты помечаются как **SKIPPED**, а сборка остаётся зелёной.
+> С запущенным окружением: `LoginTest` PASSED, `BlockingTest` FAILED (баг SUT, см. [issue #1](https://github.com/FatimaTkachenko/sql-deadline/issues/1)).
