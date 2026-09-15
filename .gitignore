@@ -40,6 +40,6 @@ out/
 *.tar.gz
 *.rar
 ### Project specific ###
-data/
-tmp/
+/data/
+/tmp/
 !artifacts/**/*.jar
